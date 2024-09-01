@@ -7,7 +7,7 @@ import React from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
 
-const leftSidebar = () => {
+const LeftSidebar = () => {
     const pathname = usePathname();
     const router = useRouter()
     return (
@@ -36,4 +36,4 @@ const leftSidebar = () => {
     )
 }
 
-export default leftSidebar
+export default LeftSidebar
