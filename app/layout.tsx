@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Podcaster",
   description: "App built by Jumzeey, courtesy of JSM. Generate your podcast using AI",
   icons: {
-    icon: '/icons/logo/svg'
+    icon: '/icons/logo.svg'
   }
 };
 
