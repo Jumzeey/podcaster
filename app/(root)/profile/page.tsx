@@ -1,8 +1,11 @@
+import PageHeading from '@/components/PageHeading'
 import React from 'react'
 
 const Profile = () => {
   return (
-    <div>Profile</div>
+    <div>
+          <PageHeading title="My Profile" />
+    </div>
   )
 }
 
