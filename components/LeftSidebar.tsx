@@ -4,12 +4,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import links from '@constants/sidebarLinks.json'
 import React from 'react'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
+import { useAuth } from '@clerk/nextjs' 
 
 const LeftSidebar = () => {
     const pathname = usePathname();
-    const router = useRouter()
+    const { isSignedIn } = useAuth(); // Check if the user is signed in
+
+    console.log('signed in: ', isSignedIn)
     return (
         <section className='left_sidebar '>
             <nav className='flex flex-col gap-6'>
@@ -20,6 +23,9 @@ const LeftSidebar = () => {
 
                 {links.map(({ route, label, imgURL }) => {
                     const isActive = pathname === route || pathname.startsWith(`${route}/`)
+                    if ((route === "/profile") && !isSignedIn) {
+                        return null;
+                    }
 
                     return <Link
                         href={route}
